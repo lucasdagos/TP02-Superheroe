@@ -46,7 +46,18 @@ internal class Program
                     break;
 
                     case COMPETIR:
-
+                    if(superheroe1 != null && superheroe2 != null)
+                    {
+                        skillSuperheroe1 = superheroe1.ObtenerSkill();
+                        skillSuperheroe2 = superheroe2.ObtenerSkill();
+                    
+                        diferenciaSkills = skillSuperheroe1 - skillSuperheroe2;
+                        MostrarGanador(diferenciaSkills, superheroe1, superheroe2, AMPLIA_DIFERENCIA, PAREJO, NO_LE_SOBRO_NADA);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No pueden combatir los superheroes si no se ingresaron los datos de cada uno.");
+                    }
                     break;
 
                     case CAMBIAR_ATRIBUTOS:

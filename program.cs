@@ -61,14 +61,9 @@ internal class Program
                     break;
 
                     case CAMBIAR_ATRIBUTOS:
-
                     break;
-
-                    case SALIR:
-
-                    break;
-
                 }
+                opcionMenu = IngresarOpcionMenu(PREGUNTAR_OPCION_MENU, CARGAR_DATOS_SUPERHEROE_1, CARGAR_DATOS_SUPERHEROE_2, COMPETIR, CAMBIAR_ATRIBUTOS , SALIR);
         }
 
         

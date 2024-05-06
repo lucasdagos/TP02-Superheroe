@@ -61,6 +61,42 @@ internal class Program
                     break;
 
                     case CAMBIAR_ATRIBUTOS:
+                    if(superheroe1 != null & superheroe2 != null)
+                    {
+                        nombreSuper = IngresarNombreSuperheroe("Ingrese el nombre del Superheroe a modificar", superheroe1, superheroe2);
+                        
+                        respuesta = ResponderSiOno("¿Desea Cambiar el Atributo de fuerza? Ingrese s(si) o n(no)", SI, NO);
+                        if(respuesta == SI && nombreSuper == superheroe1.Nombre)
+                        {
+                            superheroe1.Fuerza = IngresarAtributoSuperheroe("Ingrese la fuerza del superheroe: ");
+                        }
+                        else if(respuesta == SI && nombreSuper == superheroe2.Nombre)
+                        {
+                            superheroe2.Fuerza = IngresarAtributoSuperheroe("Ingrese la fuerza del superheroe: ");
+                        }
+
+                        respuesta = ResponderSiOno("¿Desea Cambiar el Atributo de Velocidad? Ingrese s(si) o n(no)", SI, NO);
+                        if(respuesta == SI && nombreSuper == superheroe1.Nombre)
+                        {
+                            superheroe1.Velocidad = IngresarAtributoSuperheroe("Ingrese la velocidad del superheroe: ");
+                        }
+                        else if(respuesta == SI && nombreSuper == superheroe2.Nombre)
+                        {
+                            superheroe2.Velocidad = IngresarAtributoSuperheroe("Ingrese la fuerza del superheroe: ");
+                        }
+
+                        skillSuperheroe1 = superheroe1.ObtenerSkill();
+                        skillSuperheroe2 = superheroe2.ObtenerSkill();
+                    
+                        diferenciaSkills = skillSuperheroe1 - skillSuperheroe2;
+                        MostrarGanador(diferenciaSkills, superheroe1, superheroe2, AMPLIA_DIFERENCIA, PAREJO, NO_LE_SOBRO_NADA);
+                        
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("No pueden combatir los superheroes si no se ingresaron los datos de cada uno.");
+                    }
                     break;
                 }
                 opcionMenu = IngresarOpcionMenu(PREGUNTAR_OPCION_MENU, CARGAR_DATOS_SUPERHEROE_1, CARGAR_DATOS_SUPERHEROE_2, COMPETIR, CAMBIAR_ATRIBUTOS , SALIR);

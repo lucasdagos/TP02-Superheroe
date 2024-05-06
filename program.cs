@@ -29,6 +29,35 @@ internal class Program
             Superheroe superheroe2 = null;
             double skillSuperheroe1, skillSuperheroe2, diferenciaSkills;
             char respuesta;
+
+             opcionMenu = IngresarOpcionMenu(PREGUNTAR_OPCION_MENU, CARGAR_DATOS_SUPERHEROE_1, CARGAR_DATOS_SUPERHEROE_2, COMPETIR,CAMBIAR_ATRIBUTOS, SALIR);
+            while(opcionMenu != SALIR)
+            {
+                switch(opcionMenu)
+                {
+                    case CARGAR_DATOS_SUPERHEROE_1:
+                    superheroe1 = ObtenerSuperheroe();
+                    Console.WriteLine("Se ha creado el superhéroe " + superheroe1.Nombre);
+                    break;
+
+                    case CARGAR_DATOS_SUPERHEROE_2:
+                    superheroe2 = ObtenerSuperheroe();
+                    Console.WriteLine("Se ha creado el superhéroe " + superheroe2.Nombre);
+                    break;
+
+                    case COMPETIR:
+
+                    break;
+
+                    case CAMBIAR_ATRIBUTOS:
+
+                    break;
+
+                    case SALIR:
+
+                    break;
+
+                }
         }
 
         
